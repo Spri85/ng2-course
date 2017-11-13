@@ -1,0 +1,22 @@
+<input type="text" class="form-control" [(ngModel)]="carName">
+<button class="btn btn-primary" (click)="addCar()" >Add car</button>
+<p *ngIf="!addCarStatus; else successStatus">Car didn't added!</p>
+
+<ng-template #successStatus>
+  <p>Car was added!</p>
+</ng-template>
+<hr>
+
+
+<!--<app-car *ngFor="let car of cars"></app-car>-->
+
+<ul>
+  <li *ngFor="let date of dates; let inx = index">
+    <!--<div-->
+      <!--[ngStyle]="{backgroundColor: (inx + 1) % 2 ===0 ? 'red' : 'green', 'color': 'white'}"-->
+      <!--[ngClass]="{'big-text': setBigCarText(car)}"></div>-->
+
+
+    <b>{{inx+1}}</b> - <i>{{ date |  uppercase}}</i>
+  </li>
+</ul>
